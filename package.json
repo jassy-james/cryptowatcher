@@ -1,0 +1,50 @@
+{
+  "name": "cryptowatcher",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "docker:dev:build:image": "docker build --no-cache -f Dockerfile -t cryptowatcher-dev-image .",
+    "docker:dev:run:container": "docker run --name cryptowatcher-dev-container -p 3000:3000 -d cryptowatcher-dev-image",
+    "docker:dev:rm:image": "docker stop cryptowatcher-dev-container && docker rm cryptowatcher-dev-container",
+    "docker:dev:rebuild:all": "npm run docker:dev:build:image && npm run docker:dev:rm:container && npm run docker:dev:run:container",
+    "docker:prod:build:image": "docker build --no-cache -f Dockerfile.prod -t cryptowatcher-image .",
+    "docker:prod:run:container": "docker run --name cryptowatcher-container -p 80:80 -d cryptowatcher-image",
+    "docker:prod:rm:container": "docker stop cryptowatcher-container && docker rm cryptowatcher-container",
+    "docker:prod:rebuild:all": "npm run docker:prod:build:image && npm run docker:prod:rm:container && npm run docker:prod:run:container"
+  },
+  "dependencies": {
+    "antd": "^5.4.2",
+    "axios": "^1.3.5",
+    "compose-function": "^3.0.3",
+    "highcharts": "^10.3.3",
+    "highcharts-react-official": "^3.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.10.0",
+    "swr": "^2.1.3"
+  },
+  "devDependencies": {
+    "@types/compose-function": "^0.0.30",
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
+    "@vitejs/plugin-react": "^3.1.0",
+    "eslint": "^8.38.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.8.7",
+    "typescript": "^4.9.3",
+    "vite": "^4.2.0"
+  }
+}

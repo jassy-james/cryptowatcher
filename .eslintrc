@@ -1,0 +1,46 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb", "airbnb-typescript", "airbnb/hooks", "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "prettier", "react", "react-hooks", "import", "@typescript-eslint"
+  ],
+  "rules": {
+   "@typescript-eslint/no-unused-expressions": "off",
+   "react-hooks/exhaustive-deps": "off",
+   "react/react-in-jsx-scope": "off",
+    "react/function-component-definition": "off",
+   "react/jsx-props-no-spreading": "off",
+   "react/require-default-props": "off",
+   "import/extensions": "off",
+   "import/no-extraneous-dependencies": "off",
+   "import/prefer-default-export": "off",
+   "import/no-default-export": "off",
+   "no-plusplus": "off",
+   "import/order": [
+     "warn",
+     {
+       "newlines-between": "always-and-inside-groups",
+       "alphabetize": {
+         "order": "asc",
+         "caseInsensitive": true
+       }
+     }
+   ],
+   "object-curly-spacing": "warn",
+   "react/destructuring-assignment": "off"
+  }
+}

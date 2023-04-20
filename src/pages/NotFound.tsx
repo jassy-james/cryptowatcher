@@ -1,3 +1,3 @@
-export const NotFound = () => {
-  return <h1>Страница не найдена</h1>;
-};
+import { NotFoundErrorMessage } from "@/shared/components/ErrorMessage/NotFoundErrorMessage";
+
+export const NotFound = () => <NotFoundErrorMessage />;

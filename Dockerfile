@@ -1,12 +1,16 @@
-FROM node:18-alpine
+FROM node:18-alpine AS builder
 
 WORKDIR /app
 
 COPY . /app
 
-COPY package.json /app
-COPY package-lock.json /app
+RUN npm ci && npm run build
 
-RUN npm ci && npm run dev
+FROM nginx:stable-alpine
 
-EXPOSE 3000
+COPY --from=builder /app/dist /usr/share/nginx/html
+COPY docker/nginx/nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]

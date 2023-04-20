@@ -1,0 +1,9 @@
+.markets-table {
+  & .active-indicator {
+    color: #4a9b40;
+  }
+
+  & .error-indicator {
+    color: #ff2c34;
+  }
+}

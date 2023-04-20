@@ -7,11 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "docker:dev:build:image": "docker build --no-cache -f Dockerfile -t cryptowatcher-dev-image .",
-    "docker:dev:run:container": "docker run --name cryptowatcher-dev-container -p 3000:3000 -d cryptowatcher-dev-image",
-    "docker:dev:rm:image": "docker stop cryptowatcher-dev-container && docker rm cryptowatcher-dev-container",
-    "docker:dev:rebuild:all": "npm run docker:dev:build:image && npm run docker:dev:rm:container && npm run docker:dev:run:container",
-    "docker:prod:build:image": "docker build --no-cache -f Dockerfile.prod -t cryptowatcher-image .",
+    "docker:prod:build:image": "docker build --no-cache -f Dockerfile -t cryptowatcher-image .",
     "docker:prod:run:container": "docker run --name cryptowatcher-container -p 80:80 -d cryptowatcher-image",
     "docker:prod:rm:container": "docker stop cryptowatcher-container && docker rm cryptowatcher-container",
     "docker:prod:rebuild:all": "npm run docker:prod:build:image && npm run docker:prod:rm:container && npm run docker:prod:run:container"
@@ -19,9 +15,14 @@
   "dependencies": {
     "antd": "^5.4.2",
     "axios": "^1.3.5",
+    "classnames": "^2.3.2",
     "compose-function": "^3.0.3",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
     "highcharts": "^10.3.3",
     "highcharts-react-official": "^3.2.0",
+    "http-proxy-middleware": "^2.0.6",
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",
@@ -29,6 +30,8 @@
   },
   "devDependencies": {
     "@types/compose-function": "^0.0.30",
+    "@types/express": "^4.17.17",
+    "@types/lodash": "^4.14.194",
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
@@ -44,6 +47,7 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^2.8.7",
+    "sass": "^1.62.0",
     "typescript": "^4.9.3",
     "vite": "^4.2.0"
   }

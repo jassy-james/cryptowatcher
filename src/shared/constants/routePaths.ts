@@ -1,5 +1,9 @@
 export const routePaths = {
   root: "/",
-  dashboard: "dashboard",
-  about: "about",
+  marketTrades: {
+    index: "/market-trades",
+  },
+  about: {
+    index: "/about",
+  },
 };

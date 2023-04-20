@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import { About, Dashboard, Root, NotFound } from "@/pages";
+import { MarketTrades, Root, NotFound, Markets, About } from "@/pages";
 import { routePaths } from "@/shared/constants/routePaths";
 
 export const router = createBrowserRouter([
@@ -10,13 +10,17 @@ export const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       {
-        path: routePaths.dashboard,
-        element: <Dashboard />,
+        index: true,
+        element: <Markets />,
+      },
+      {
+        path: routePaths.marketTrades.index,
+        element: <MarketTrades />,
+      },
+      {
+        path: routePaths.about.index,
+        element: <About />,
       },
     ],
-  },
-  {
-    path: routePaths.about,
-    element: <About />,
   },
 ]);

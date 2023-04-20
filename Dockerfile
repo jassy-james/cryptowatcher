@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY . /app
 
+COPY package*.json /app
+
 RUN npm ci && npm run build
 
 FROM nginx:stable-alpine

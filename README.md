@@ -10,6 +10,6 @@
 * перейти на localhost:3000
 
 ## Запуск (prod)
-* Docker - npm run docker:prod:rebuild:all
+* Docker - npm run docker:prod:build:image && npm run docker:prod:run:container
 * NodeJS - node server (не до конца подготовленный для production режима, использовал для пробы решения проблемы проксирования)
 
